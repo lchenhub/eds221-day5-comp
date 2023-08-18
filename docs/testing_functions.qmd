@@ -4,6 +4,10 @@ format: html
 editor: visual
 ---
 
+```{r}
+library(testthat)
+```
+
 Write a function
 
 ```{r}
@@ -19,4 +23,19 @@ mean_range(mtcars)
 
 ```{r}
 mean_range(faithful)
+```
+
+Write some unit tests using 'testthat'
+
+```{r}
+expect_length(mean_range(mtcars), 2)
+#no error msg means the function passed
+```
+
+```{r}
+expect_type(mean_range(mtcars), "double")
+```
+
+```{r}
+expect_true(mean_range(mtcars)[1] >= mean_range(mtcars)[2])
 ```
